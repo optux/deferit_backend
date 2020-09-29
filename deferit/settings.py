@@ -108,6 +108,10 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_URL = '/static/'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/

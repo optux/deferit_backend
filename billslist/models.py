@@ -25,8 +25,10 @@ class Bill(models.Model):
     description = models.CharField(max_length=255, blank=True)
     # For simplicity, instead of ImageField, text field is used
     # placeholder.com is used for image url for now
-    thumbnail_url = models.TextField(default='https://via.placeholder.com/120')
-    original_url = models.TextField(default='https://via.placeholder.com/480')
+    thumbnail_url = models.TextField(
+        default='https://via.placeholder.com/80x120')
+    original_url = models.TextField(
+        default='https://via.placeholder.com/480x720')
     amount = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     status = models.CharField(
         max_length=2,

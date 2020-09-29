@@ -35,6 +35,7 @@ class Bill(models.Model):
         choices=STATUS_CHOICES,
         default=PROCESSING,
     )
+    due_date = models.DateTimeField(blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     processed_at = models.DateTimeField(blank=True)
 

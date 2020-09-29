@@ -12,5 +12,5 @@ admin.site.unregister(Group)
 @admin.register(Bill)
 class Bill(admin.ModelAdmin):
     model = Bill
-    list_display = ('id', 'short_description', 'created_at')
-    readonly_fields = ('created_at', 'updated_at')
+    list_display = ('id', 'short_description', 'due_date')
+    readonly_fields = ('created_at', 'processed_at')

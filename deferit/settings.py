@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@!%1(c0vcwpgg7lwdtkiy%c7j#=2as1ts_njm6*&c*g52nrd%w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['3.26.0.97']
+ALLOWED_HOSTS = ['*', '3.26.0.97']
 
 
 # Application definition
@@ -103,9 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    # this will define the number of records per page which will be returned
-    'PAGE_SIZE': 10
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
 }
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')

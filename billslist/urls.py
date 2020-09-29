@@ -6,5 +6,5 @@ from .views import BillsList
 router = DefaultRouter()
 
 urlpatterns = [
-    path('api/v1/billsinfo/<int:page>/', BillsList.as_view(), name='billslist')
+    path('api/v1/billslist/<int:page>/', BillsList.as_view(), name='billslist')
 ]

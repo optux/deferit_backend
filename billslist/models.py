@@ -2,7 +2,7 @@
 from django.db import models
 
 # For simplicity, no user model is linked to this Bill model
-# Suppose this table is only for one customer for now.
+# Suppose this table is only for one customer just for now.
 
 
 class Bill(models.Model):
@@ -20,8 +20,13 @@ class Bill(models.Model):
 
     # customer = models.ForeignKey(
     #     User, related_name='customer', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/% Y/% m/% d/')
-    amount = models.PositiveSmallIntegerField(default=0)
+    # image = models.ImageField(upload_to='images/% Y/% m/% d/')
+    description = models.CharField(max_length=255, blank=True)
+    # For simplicity, instead of ImageField, text field is used
+    # placeholder.com is used for image url for now
+    thumbnail_url = models.TextField(default='https://via.placeholder.com/120')
+    original_url = models.TextField(default='https://via.placeholder.com/480')
+    amount = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     status = models.CharField(
         max_length=2,
         choices=STATUS_CHOICES,
@@ -29,3 +34,9 @@ class Bill(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
+
+    class Meta:
+        ordering = ['created_at']
+
+    def short_description(self):
+        return str(self.description)[:50]

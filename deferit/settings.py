@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'billslist.urls'
+ROOT_URLCONF = 'deferit.urls'
 
 TEMPLATES = [
     {

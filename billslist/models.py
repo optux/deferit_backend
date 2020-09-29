@@ -21,6 +21,7 @@ class Bill(models.Model):
     # customer = models.ForeignKey(
     #     User, related_name='customer', on_delete=models.CASCADE)
     # image = models.ImageField(upload_to='images/% Y/% m/% d/')
+    id = models.AutoField(primary_key=True)
     description = models.CharField(max_length=255, blank=True)
     # For simplicity, instead of ImageField, text field is used
     # placeholder.com is used for image url for now

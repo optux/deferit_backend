@@ -36,7 +36,7 @@ class Bill(models.Model):
         default=PROCESSING,
     )
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True, blank=True)
+    processed_at = models.DateTimeField(blank=True)
 
     class Meta:
         ordering = ['created_at']

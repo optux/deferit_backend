@@ -23,7 +23,7 @@ class Bill(models.Model):
     # image = models.ImageField(upload_to='images/% Y/% m/% d/')
     id = models.AutoField(primary_key=True)
     description = models.CharField(max_length=255, blank=True)
-    # For simplicity, instead of ImageField, text field is used
+    # For simplicity, instead of using ImageField, TextField is used
     # placeholder.com is used for image url for now
     thumbnail_url = models.TextField(
         default='https://via.placeholder.com/80x120')
@@ -35,8 +35,8 @@ class Bill(models.Model):
         choices=STATUS_CHOICES,
         default=PROCESSING,
     )
-    due_date = models.DateTimeField(blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    due_date = models.DateTimeField(blank=False)
     processed_at = models.DateTimeField(blank=True)
 
     class Meta:
